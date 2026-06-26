@@ -1,0 +1,34 @@
+name: Merge EPG
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'   # každé 4 hodiny – uprav podľa potreby
+  workflow_dispatch: {}      # umožní aj manuálne spustenie z GitHub UI
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run merge script
+        run: python merge_epg.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add epg.xml epg.xml.gz
+          git diff --staged --quiet || git commit -m "Aktualizovaný zlúčený EPG"
+          git push
