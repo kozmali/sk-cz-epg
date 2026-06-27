@@ -12,8 +12,7 @@ import requests
 SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_SK1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_CZ1.xml.gz",
-    "https://iptv-org.github.io/epg/guides/sk.epg.xml",
-    "https://iptv-org.github.io/epg/guides/cz.epg.xml",
+    "https://iptv-epg.org/files/epg-cz.xml",
 ]
 
 OUTPUT_GZ = "epg.xml.gz"
