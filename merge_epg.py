@@ -13,6 +13,10 @@ SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_SK1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_CZ1.xml.gz",
     "https://iptv-epg.org/files/epg-cz.xml",
+    "https://raw.githubusercontent.com/globetvapp/epg/main/Slovakia/slovakia1.xml",
+    "https://raw.githubusercontent.com/globetvapp/epg/main/Slovakia/slovakia2.xml",
+    "https://raw.githubusercontent.com/globetvapp/epg/main/Czech/czech1.xml",
+    "https://raw.githubusercontent.com/globetvapp/epg/main/Czech/czech2.xml",
 ]
 
 OUTPUT_GZ = "epg.xml.gz"
