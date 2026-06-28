@@ -245,7 +245,7 @@ def scrape_rtg_int(days_ahead=6):
     day_programmes = {}
     for day_offset in range(days_ahead):
         day = today + timedelta(days=day_offset)
-        url = f"http://rtgtv.ru/schedule/rtgint/{day.isoformat()}"
+        url = f"http://rtgtv.ru/en/schedule/rtgint/{day.isoformat()}"
         try:
             resp = requests.get(url, headers=HEADERS, timeout=30)
             resp.raise_for_status()
