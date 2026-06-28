@@ -238,7 +238,11 @@ def scrape_povazie(days_ahead=7):
 # 3) RTG int. (http://rtgtv.ru/schedule/rtgint/<YYYY-MM-DD>)
 # ---------------------------------------------------------------------------
 def scrape_rtg_int(days_ahead=6):
-    """RTG ma pekne cisty denny rozvrh s datumom rovno v URL."""
+    """RTG ma pekne cisty denny rozvrh s datumom rovno v URL.
+    Pouzivame anglicku verziu stranky (/en/) - vacsina nazvov je
+    prelozena do anglictiny, len zopar specialnych formatov
+    (napr. 'RTG TV TOP10 ...', 'Коллекция Russian Travel Guide ...')
+    zostava po rusky, lebo tie konkretne diely este nemaju EN nazov."""
     programmes = []
     today = datetime.now(TZ).date()
 
